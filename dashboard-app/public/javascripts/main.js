@@ -158,7 +158,7 @@ function updateTransactionsTable(transactionData) {
             typeCol.innerHTML = (transaction.amount > 0 ? "Deposit" : "Withdraw");
 
             var tsCol = document.createElement('td');
-            tsCol.innerHTML = transaction.timestamp;
+            tsCol.innerHTML = new Date(transaction.timestamp).toLocaleString();
 
             transRow.append(amountCol, typeCol, tsCol);
             transactionTable.append(transRow);
