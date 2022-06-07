@@ -1,18 +1,17 @@
 var express = require('express');
 var logger = require('morgan');
+var cors = require('cors');
 http = require('http');
 const hostname = '127.0.0.1';
 const port = 3000;
 var transactionRouter = require('./routes/transactionRouter');
-var accountRouter = require('./routes/accountRouter');
 
 var app = express();
-
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/transactions', transactionRouter);
-app.use('/accounts', accountRouter);
 
 
 // Catch 404 and forward it

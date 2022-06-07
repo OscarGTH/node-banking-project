@@ -11,8 +11,8 @@ startClient();
 async function startClient(){
     // Looping indefinitely
     while(true) {
-        // Getting random wait time between 0.2 and 2 seconds.
-        let waitTime = getRandomInRange(0.2, 2) * 1000;
+        // Getting random wait time in a range.
+        let waitTime = getRandomInRange(0.2, 3) * 1000;
         // Waiting between each request
         await new Promise(resolve => setTimeout(resolve, waitTime));
         // Generating random index in a range of 0 to account number array length

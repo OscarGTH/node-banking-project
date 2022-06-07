@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body>
+      <h1>
+        Account Details
+      </h1>
+      <a class="home-link" href="index.html">Back to home</a>
+      <div class="account-info-container">
+        <p class="account-info">Account number: <span id="account-number"></span></p>
+        <p class="account-info">Current balance: <span id="account-balance"></span></p>
+        <p class="account-info">Transaction count: <span id="transaction-count"></span></p>
+      </div>
+      <div id="table-container">
+        <table class="default-table" id="transactions">
+          <caption>Transaction logs</caption>
+            <tr>
+              <th>Amount</th>
+              <th>Type</th>
+              <th>Timestamp</th>
+            </tr>
+        </table>
+      </div>
+	<script src="javascripts/main.js"></script>
+    <script>
+        window.onload = function() {
+          loadAccount(localStorage.getItem("accountNumber"));
+        };
+    </script>
+  </body>
+</html>

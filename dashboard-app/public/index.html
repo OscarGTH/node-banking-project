@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body>
+    <h1>
+        Bank account monitoring system
+    </h1>
+    <div id="table-container">
+        <table class="default-table" id="accounts">
+            <caption>Accounts overview</caption>
+            <tr>
+              <th>Account Number</th>
+              <th>Balance</th>
+              <th>Transaction Count</th>
+            </tr>
+        </table>
+    </div>
+	<script src="javascripts/main.js"></script>
+    <script>
+        window.onload = function() {
+            loadAllAccounts()
+        };
+    </script>
+  </body>
+</html>

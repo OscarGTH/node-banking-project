@@ -1,0 +1,113 @@
+body {
+  padding: 5px;
+  background: rgb(18,52,59);
+  background: linear-gradient(90deg, rgba(18,52,59,1) 0%, rgba(45,84,94,1) 35%, rgba(200,150,102,1) 73%, rgba(225,179,130,1) 96%);
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+h1 {
+  margin-bottom: 1em;
+  color: white;
+}
+a {
+  color: #00B7FF;
+}
+
+#table-container{
+  display: flex; 
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+}
+
+.default-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  .default-table {
+    width: 100%;
+  }
+}
+
+.home-link {
+  margin: 5px;
+  padding-bottom: 5px;
+  color: #e1b382;
+}
+.home-link:hover {
+  font-weight: bold;
+  color: #705941;
+}
+
+.account-link {
+  color: #2d545e;
+}
+
+.account-link:hover {
+  color: #12343b;
+}
+
+.account-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px solid #2d545e;
+  border-radius: 1em;
+  background-color: #12343b;
+  margin: 0.5em 0 1em 0;
+}
+@media only screen and (max-width: 800px) {
+  .account-info-container {
+    flex-direction: column;
+  }
+  .account-info {
+    margin-left: 10px;
+  }
+}
+
+.account-info {
+  font-size: medium;
+  font-weight: bold;
+  color: #f2f2f2;
+}
+.account-info span {
+  font-size: normal;
+  font-weight: 100;
+}
+
+.default-table caption {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: white;
+  text-align: left;
+}
+.default-table td, .default-table th {
+  padding: 8px;
+  margin-left: 3px;
+}
+
+.default-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.default-table tr:nth-child(odd){background-color: #eee9e8;}
+
+.default-table tr:hover {background-color: #ddd;}
+
+.default-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: white;
+  color: #12343b;
+}
+
+.default-table td.deposit {
+  color: green;
+}
+.default-table td.withdraw {
+  color: red;
+}

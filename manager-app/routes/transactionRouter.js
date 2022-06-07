@@ -15,8 +15,15 @@ transactionRouter.route('/')
 
 transactionRouter.route('/:accountNumber')
 .get((req, res, next) => {
-    res.statusCode = 403;
-    res.end('GET operation not supported on /transaction/'+ req.params.accountNumber);
+    if (accounts.hasOwnProperty(req.params.accountNumber)) {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(accounts[req.params.accountNumber]);
+    } else {
+        res.statusCode = 403;
+        res.setHeader('Content-Type', 'application/json');
+        res.json({"error": "Invalid account number."});
+    }
 })
 .post((req, res, next) => {
     if (req.body.amount != null) {
