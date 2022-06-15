@@ -42,7 +42,7 @@ async function updateAccountData(accountNumber) {
 function fetchAccountData(accountNumber) {
 
     // Getting transaction data from server
-    axios.get('http://localhost:3000/transactions/' + accountNumber)
+    axios.get('http://localhost:49161/transactions/' + accountNumber)
     .then(function (response) {
         // Setting account balance and transaction count visible to user.
         document.getElementById("account-balance").innerHTML = response.data.balance + " €";
@@ -62,7 +62,7 @@ function fetchAccountData(accountNumber) {
 function fetchAccountsData() {
 
     // Getting transaction data from server
-    axios.get('http://localhost:3000/transactions')
+    axios.get('http://localhost:49161/transactions')
     .then(function (response) {
         // handle success
         updateAccountsTable(response.data)

@@ -2,8 +2,8 @@ var express = require('express');
 var logger = require('morgan');
 var cors = require('cors');
 http = require('http');
-const hostname = '127.0.0.1';
-const port = 3000;
+const hostname = '0.0.0.0';
+const port = 8081;
 var transactionRouter = require('./routes/transactionRouter');
 
 var app = express();

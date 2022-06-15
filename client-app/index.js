@@ -1,5 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
+const HOST = "localhost";
+const PORT = 49161;
 
 let rawAccountData = fs.readFileSync('bank_accounts.json');
 // Reading account numbers into memory
@@ -40,7 +42,7 @@ function getTransactionAmount(pos_max) {
   
 function performTransaction(accountNumber, transactionAmount) {
   axios
-    .post('http://127.0.0.1:3000/transactions/' + accountNumber, {
+    .post('http://' + HOST + ':' + PORT + '/transactions/' + accountNumber, {
       "amount": transactionAmount
     })
     .then(res => {
