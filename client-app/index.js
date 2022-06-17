@@ -1,7 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
-const HOST = "localhost";
-const PORT = 49161;
+const HOST = "0.0.0.0";
+const PORT = 8081;
 
 let rawAccountData = fs.readFileSync('bank_accounts.json');
 // Reading account numbers into memory
@@ -14,7 +14,7 @@ async function startClient(){
     // Looping indefinitely
     while(true) {
         // Getting random wait time in a range.
-        let waitTime = getRandomInRange(0.2, 3) * 1000;
+        let waitTime = getRandomInRange(2, 5) * 1000;
         // Waiting between each request
         await new Promise(resolve => setTimeout(resolve, waitTime));
         // Generating random index in a range of 0 to account number array length
@@ -51,6 +51,7 @@ function performTransaction(accountNumber, transactionAmount) {
                   " after transaction: "  + res.data["balance"]);
     })
     .catch(error => {
-      console.error(error);
+      console.error(error.message);
+      console.log("-----------------")
     });
 }
